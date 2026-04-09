@@ -4,7 +4,7 @@ import type { Film } from '@/types/film'
 
 export function useFilms() {
   const films = ref<Film[]>([])
-  const film = ref<Film>({})
+  const film = ref<Film | null>(null)
   const loading = ref(false)
   const error = ref<string | null>(null)
 
