@@ -26,6 +26,9 @@
             <p>{{ film?.description || '' }}</p>
           </div>
         </div>
+
+        <p v-else-if="error">{{ error }}</p>
+        <p v-else>Cargando...</p>
       </div>
     </div>
   </div>
