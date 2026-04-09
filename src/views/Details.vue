@@ -19,11 +19,11 @@
           </div>
 
           <div class="column is-8">
-            <p class="subtitle"><strong>Titulo original: </strong>{{ film.original_title }}</p>
-            <p class="subtitle"><strong>Título original romanizado: </strong>{{ film.original_title_romanised }}</p>
-            <p><strong>Director: </strong>{{ film.director }}</p>
-            <p><strong>Productor: </strong>{{ film.producer }}</p>
-            <p>{{ film.description }}</p>
+            <p class="subtitle"><strong>Titulo original: </strong>{{ film?.original_title }}</p>
+            <p class="subtitle"><strong>Título original romanizado: </strong>{{ film?.original_title_romanised }}</p>
+            <p><strong>Director: </strong>{{ film?.director }}</p>
+            <p><strong>Productor: </strong>{{ film?.producer }}</p>
+            <p>{{ film?.description }}</p>
           </div>
         </div>
       </div>
