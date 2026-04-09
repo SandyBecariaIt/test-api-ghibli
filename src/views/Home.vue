@@ -17,7 +17,7 @@
         <div v-else-if="error">{{ error }}</div>
 
         <div v-else class="columns is-multiline">
-          <div v-for="film in films" :key="film.id" class="column is-3">
+          <div v-for="film in searchFilm" :key="film.id" class="column is-3">
             <Card
               :id="film.id"
               :title="film.title"
@@ -36,7 +36,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
+import { ref, computed, onMounted } from "vue";
 import { useFilms } from "@/composables/useFilms";
 import { useRouter } from "vue-router";
 
@@ -58,6 +58,14 @@ const onSelectedMovie = (id: string) => {
   console.log("Película seleccionada n.n", id);
   router.push({ name: "details", params: { id } });
 };
+
+const searchFilm = computed(() => {
+  const text = search.value.toLowerCase();
+  return films.value.filter((f) => {
+    return f.title.toLowerCase().includes(text);
+  });
+});
+
 </script>
 
 <style scoped></style>
