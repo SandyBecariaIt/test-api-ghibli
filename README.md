@@ -47,3 +47,4 @@ npm run type-check
 - El proyecto usa Vue 3, Vite y Bulma para el estilo.
 - El buscador de películas ofrece autocompletado para facilitar la selección.
 - Cada película tiene una pantalla de detalle con información clara y ordenada.
+- Contemplar agregar el .env basandose en el .env.example
