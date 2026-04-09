@@ -11,7 +11,7 @@
   <div class="card">
     <div class="card-content">
       <div class="content">
-        <div class="columns is-multiline" v-if="!loading">
+        <div class="columns is-multiline" v-if="!loading && !error || !film">
           <div class="column is-4">
             <figure class="image">
               <img :src="film.image" />
