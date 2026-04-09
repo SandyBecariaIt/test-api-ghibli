@@ -13,17 +13,17 @@
       <div class="content">
         <div class="columns is-multiline" v-if="!loading">
           <div class="column is-4">
-            <figure class="image is-128x128">
+            <figure class="image">
               <img :src="film.image" />
             </figure>
           </div>
 
           <div class="column is-8">
             <p class="subtitle"><strong>Titulo original: </strong>{{ film.original_title }}</p>
+            <p class="subtitle"><strong>Título original romanizado: </strong>{{ film.original_title_romanised }}</p>
+            <p><strong>Director: </strong>{{ film.director }}</p>
+            <p><strong>Productor: </strong>{{ film.producer }}</p>
             <p>{{ film.description }}</p>
-            <p><strong>Director: </strong>{{ film.director }}</p>
-
-            <p><strong>Director: </strong>{{ film.director }}</p>
           </div>
         </div>
       </div>
