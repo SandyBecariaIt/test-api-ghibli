@@ -5,7 +5,7 @@
         class="input"
         type="email"
         :placeholder="props.placeholder"
-        @input="emits('update:modelValue', $event.target.value)"
+        v-model="model"
       />
       <span class="icon is-small is-right">
         <i class="fa-solid fa-magnifying-glass"></i>
@@ -16,12 +16,9 @@
 
 <script setup lang="ts">
 // TODO: Add logic for input validation and handling user input
+const model = defineModel<string>()
+
 const props = defineProps<{
     placeholder?: string
-    modelValue?: string
-}>()
-
-const emits = defineEmits<{
-    (event: 'update:modelValue', value: string): void
 }>()
 </script>

@@ -3,25 +3,24 @@
     <div class="card-image">
       <figure class="image is-4by3">
         <img
-          src="https://bulma.io/assets/images/placeholders/1280x960.png"
-          alt="Placeholder image"
+          :src="movie_banner"
+          :alt="title"
         />
       </figure>
     </div>
     <div class="card-content">
       <div class="media">
         <div class="media-content">
-          <p class="title is-4">John Smith</p>
-          <p class="subtitle is-6">@johnsmith</p>
+          <p class="title is-4">{{ title }}</p>
+          <p class="subtitle is-6">{{ original_title }}</p>
         </div>
       </div>
 
       <div class="content">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis
-        mauris. <a>@bulmaio</a>. <a href="#">#css</a>
-        <a href="#">#responsive</a>
-        <br />
-        <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+
+        <time datetime="2016-1-1">
+          <strong>Director: </strong> {{ director }}
+        </time>
       </div>
     </div>
   </div>
@@ -29,6 +28,17 @@
 
 <script setup lang="ts">
 defineProps<{
-
+  title: string,
+  original_title: string,
+  image: string,
+  movie_banner: string,
+  description: string,
+  director: string,
 }>()
 </script>
+
+<style scoped>
+.image img {
+  object-fit: cover;
+}
+</style>

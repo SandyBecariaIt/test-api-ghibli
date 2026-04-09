@@ -10,11 +10,13 @@ export function useFilms() {
   async function getAllFilms() {
     loading.value = true
     error.value = null
-
+    console.log("Hola")
     try {
       films.value = await get<Film[]>('/films')
+      console.log(films.value)
     } catch (e) {
       error.value = (e as Error).message
+      console.log((e as Error).message)
     } finally {
       loading.value = false
     }

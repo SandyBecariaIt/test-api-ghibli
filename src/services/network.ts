@@ -1,4 +1,4 @@
-const BASE_URL = import.meta.env.VITE_BASE_URL
+const BASE_URL = import.meta.env.VITE_API_URL
 
 const headers = new Headers({
   'Content-Type': 'application/json',
@@ -14,7 +14,7 @@ async function request<T>(uri: string, options?: RequestInit): Promise<T> {
   if (!response.ok) {
     throw new Error(`Error ${response.status}: ${response.statusText}`)
   }
-
+  
   return response.json()
 }
 
