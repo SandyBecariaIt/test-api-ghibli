@@ -9,4 +9,5 @@ export interface Film {
   producer: string,
   release_date: string,
   running_time: string,
+  original_title_romanised: string,
 }

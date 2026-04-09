@@ -14,7 +14,7 @@
         <div class="columns is-multiline" v-if="!loading && !error || !film">
           <div class="column is-4">
             <figure class="image">
-              <img :src="film.image" />
+              <img :src="film?.image || ''" />
             </figure>
           </div>
 
