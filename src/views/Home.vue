@@ -4,7 +4,11 @@
 
     <div class="columns is-multiline">
       <div class="column is-4">
-        <Input placeholder="Buscar película..." v-model="search" />
+        <Input
+          :items="films"
+          placeholder="Buscar película..."
+          @select="onSelect"
+        />
       </div>
 
       <div class="column is-full">
@@ -53,6 +57,10 @@ const { films, loading, error, getAllFilms } = useFilms();
 onMounted(() => {
   getAllFilms();
 });
+
+function onSelect(item: { id: string; title: string }) {
+  router.push({ name: 'details', params: { id: item.id } })
+}
 
 const onSelectedMovie = (id: string) => {
   console.log("Película seleccionada n.n", id);
