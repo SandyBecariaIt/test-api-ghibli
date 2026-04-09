@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p class="title">Películas del Studio Ghibli</p>
+    <p class="title">Studio Ghibli</p>
 
     <div class="columns is-multiline">
       <div class="column is-4">
