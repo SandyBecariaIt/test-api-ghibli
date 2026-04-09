@@ -4,19 +4,32 @@ import type { Film } from '@/types/film'
 
 export function useFilms() {
   const films = ref<Film[]>([])
+  const film = ref<Film>({})
   const loading = ref(false)
   const error = ref<string | null>(null)
 
   async function getAllFilms() {
     loading.value = true
     error.value = null
-    console.log("Hola")
+
     try {
       films.value = await get<Film[]>('/films')
-      console.log(films.value)
     } catch (e) {
       error.value = (e as Error).message
-      console.log((e as Error).message)
+    } finally {
+      loading.value = false
+    }
+  }
+
+  async function getFilmById(id: string) {
+    loading.value = true
+    error.value = null
+    
+    try {
+      film.value = await get<Film>(`/films/${id}`)
+      console.log(film.value)
+    } catch (e) {
+      error.value = (e as Error).message
     } finally {
       loading.value = false
     }
@@ -24,8 +37,10 @@ export function useFilms() {
 
   return {
     films,
+    film,
     loading,
     error,
+    getFilmById,
     getAllFilms
   }
 }
