@@ -27,7 +27,6 @@ export function useFilms() {
     
     try {
       film.value = await get<Film>(`/films/${id}`)
-      console.log(film.value)
     } catch (e) {
       error.value = (e as Error).message
     } finally {

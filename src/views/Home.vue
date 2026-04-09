@@ -63,7 +63,6 @@ function onSelect(item: { id: string; title: string }) {
 }
 
 const onSelectedMovie = (id: string) => {
-  console.log("Película seleccionada n.n", id);
   router.push({ name: "details", params: { id } });
 };
 
