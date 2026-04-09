@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div class="card" @click="$emit('select', id)">
     <div class="card-image">
       <figure class="image is-4by3">
         <img
@@ -28,6 +28,7 @@
 
 <script setup lang="ts">
 defineProps<{
+  id: string
   title: string,
   original_title: string,
   image: string,
@@ -35,10 +36,18 @@ defineProps<{
   description: string,
   director: string,
 }>()
+
+defineEmits<{
+  (event: 'select', id: string): void
+}>()
 </script>
 
 <style scoped>
 .image img {
   object-fit: cover;
+}
+
+.card {
+  cursor: pointer;
 }
 </style>
