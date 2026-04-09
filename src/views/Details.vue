@@ -3,7 +3,7 @@
     <div class="card-content">
       <div @click="router.back()" class="content title-content">
         <i class="fa-solid fa-arrow-left"></i>
-        <p class="title-text">{{ film.title }}</p>
+        <p class="title-text">{{ film?.title || '' }}</p>
       </div>
     </div>
   </div>
